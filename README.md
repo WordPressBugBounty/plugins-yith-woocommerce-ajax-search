@@ -1,0 +1,1 @@
+# plugins-yith-woocommerce-ajax-search
