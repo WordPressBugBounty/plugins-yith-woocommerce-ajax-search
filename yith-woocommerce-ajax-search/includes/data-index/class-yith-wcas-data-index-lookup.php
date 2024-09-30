@@ -127,17 +127,46 @@ class YITH_WCAS_Data_Index_Lookup {
 	 */
 	public function get_data_by_id( $ids, $post_type, $category = 0 ) {
 		global $wpdb;
+
+		// Sanitize input.
+		$ids       = array_map( 'intval', $ids );
+		$post_type = array_map( 'esc_sql', $post_type );
+		$category  = intval( $category );
+
 		$instock = 'yes' === ywcas()->settings->get_hide_out_of_stock() ? array( 1 ) : array( 0, 1 );
+
+		// Prepare placeholders for IDs, post types, and instock values.
+		$ids_placeholders       = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+		$post_type_placeholders = implode( ',', array_fill( 0, count( $post_type ), '%s' ) );
+		$instock_placeholders   = implode( ',', array_fill( 0, count( $instock ), '%d' ) );
+
+		// Construct the base SQL query with placeholders.
 		if ( ! $category ) {
-			$results = $wpdb->get_results( "SELECT * FROM $wpdb->yith_wcas_data_index_lookup WHERE post_id IN(" . implode( ',', $ids ) . ") AND post_type IN('" . implode( "','", $post_type ) . "') AND instock IN(" . implode( ",", $instock ) . ") ORDER BY FIELD(post_id, " . implode( ',', $ids ) . " )", ARRAY_A ); //phpcs:ignore
+			$sql = "
+            SELECT * FROM {$wpdb->yith_wcas_data_index_lookup} 
+            WHERE post_id IN ($ids_placeholders) 
+            AND post_type IN ($post_type_placeholders) 
+            AND instock IN ($instock_placeholders) 
+            ORDER BY FIELD(post_id, $ids_placeholders)
+        ";
 		} else {
-			$results = $wpdb->get_results(
-				"SELECT * FROM $wpdb->yith_wcas_data_index_lookup WHERE parent_category LIKE '%:" . $category . ";%' AND post_id IN('" . implode( '","', $ids ) . "') AND post_type IN('" . implode( "','", $post_type ) . "') AND instock IN(" . implode( ",", $instock ) . ") ORDER BY FIELD(post_id, " . implode( //phpcs:ignore
-					',',
-					$ids ) . " )", ARRAY_A ); //phpcs:ignore
+			$sql = "
+            SELECT * FROM {$wpdb->yith_wcas_data_index_lookup} 
+            WHERE parent_category LIKE %s 
+            AND post_id IN ($ids_placeholders) 
+            AND post_type IN ($post_type_placeholders) 
+            AND instock IN ($instock_placeholders) 
+            ORDER BY FIELD(post_id, $ids_placeholders)
+        ";
 		}
 
-		// ORDER BY FIELD returns results following the order of ids.
+		// Prepare the arguments for the query.
+		$args = [];
+		if ( $category ) {
+			$args[] = '%:' . $category . ';%'; // for the LIKE query.
+		}
+		$args = array_merge( $args, $ids, $post_type, $instock, $ids );
+		$results = $wpdb->get_results( $wpdb->prepare( $sql, ...$args ), ARRAY_A );
 		return array_filter( $results );
 	}
 
