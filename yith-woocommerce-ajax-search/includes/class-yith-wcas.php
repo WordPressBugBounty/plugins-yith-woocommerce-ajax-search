@@ -55,7 +55,6 @@ if ( ! class_exists( 'YITH_WCAS' ) ) {
 		 * @since 2.0.0
 		 */
 		protected function __construct() {
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
 			add_action( 'plugins_loaded', array( $this, 'load' ), 12 );
 			add_action( 'init', array( $this, 'load_text_domain' ), 0 );
 			add_action( 'init', array( $this, 'load_compatibility' ), 20 );
@@ -211,23 +210,7 @@ if ( ! class_exists( 'YITH_WCAS' ) ) {
 			return is_admin() && ! ( $check_ajax && $check_context );
 		}
 
-		/**
-		 * Load Plugin Framework
-		 *
-		 * @return void
-		 * @since  1.0.0
-		 * @access public
-		 * @author Andrea Grillo <andrea.grillo@yithemes.com>
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
-				}
-			}
-		}
+
 
 		/**
 		 * Register the rest api for the plugins

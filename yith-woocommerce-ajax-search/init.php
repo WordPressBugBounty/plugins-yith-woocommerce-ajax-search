@@ -3,13 +3,13 @@
  * Plugin Name: YITH WooCommerce Ajax Search
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-ajax-search/
  * Description: <code><strong>YITH WooCommerce Ajax Search</strong></code> is the plugin that allows you to search for a specific product by inserting a few characters. Thanks to <strong>Ajax Search</strong>, users can quickly find the contents they are interested in without wasting time among site pages. <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>.
- * Version: 2.9.0
+ * Version: 2.10.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-ajax-search
  * Domain Path: /languages/
- * WC requires at least: 9.2
- * WC tested up to: 9.4
+ * WC requires at least: 9.3
+ * WC tested up to: 9.5
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Ajax Search
@@ -40,11 +40,10 @@ if ( ! defined( 'YITH_WCAS_DIR' ) ) {
 	define( 'YITH_WCAS_DIR', plugin_dir_path( __FILE__ ) );
 }
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YITH_WCAS_DIR . 'plugin-fw/init.php' ) ) {
-	require_once YITH_WCAS_DIR . 'plugin-fw/init.php';
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( YITH_WCAS_DIR );
 
 
 if ( defined( 'YITH_WCAS_PREMIUM' ) ) {
@@ -71,7 +70,7 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 
 register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
-! defined( 'YITH_WCAS_VERSION' ) && define( 'YITH_WCAS_VERSION', '2.9.0' );
+! defined( 'YITH_WCAS_VERSION' ) && define( 'YITH_WCAS_VERSION', '2.10.0' );
 ! defined( 'YITH_WCAS_FREE_INIT' ) && define( 'YITH_WCAS_FREE_INIT', plugin_basename( __FILE__ ) );
 ! defined( 'YITH_WCAS' ) && define( 'YITH_WCAS', true );
 ! defined( 'YITH_WCAS_FILE' ) && define( 'YITH_WCAS_FILE', __FILE__ );
