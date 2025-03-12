@@ -5,7 +5,7 @@ Tags: woocommerce search by sku, woocommerce search results, woocommerce search 
 Requires at least: 6.5
 Requires PHP: 7.4
 Tested up to: 6.7
-Stable tag: 2.12.0
+Stable tag: 2.13.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -145,6 +145,10 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 7. Search Stats tab
 
 == Changelog ==
+
+= 2.13.0 - Released on 12 March 2025 =
+* New: Support for WooCommerce 8.7
+* Update: YITH plugin framework
 
 = 2.12.0 - Released on 25 February 2025 =
 * New: support for WooCommerce 9.7
