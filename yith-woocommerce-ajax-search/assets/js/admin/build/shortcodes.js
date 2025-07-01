@@ -287,7 +287,7 @@ var YWCAS_Admin_Shortcodes = function YWCAS_Admin_Shortcodes() {
 };
 YWCAS_Admin_Shortcodes();
 var __webpack_export_target__ = window;
-for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
+for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()
 ;

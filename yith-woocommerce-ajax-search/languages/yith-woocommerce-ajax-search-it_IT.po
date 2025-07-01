@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Ajax Search Premium\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "ajax-search\n"
-"POT-Creation-Date: 2025-02-25T16:09:23+00:00\n"
+"POT-Creation-Date: 2025-07-01T12:45:14+00:00\n"
 "PO-Revision-Date: 2020-03-20 08:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: Yithemes <plugins@yithemes.com>\n"
@@ -18,10 +18,12 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
 
 #. Plugin URI of the plugin
+#: init.php
 msgid "https://yithemes.com/themes/plugins/yith-woocommerce-ajax-search/"
 msgstr ""
 
 #. Description of the plugin
+#: init.php
 msgid ""
 "<code><strong>YITH WooCommerce Ajax Search</strong></code> is the plugin "
 "that allows you to search for a specific product by inserting a few "
@@ -143,6 +145,7 @@ msgstr ""
 
 #. translators: %1$d is the item processed, %2$d is the total to process, %3$s percentage.
 #: includes/admin/views/custom-fields/types/ywcas-index.php:51
+#, php-format
 msgid "%1$d / %2$d items - %3$d%%"
 msgstr ""
 
@@ -262,6 +265,7 @@ msgstr "Visualizza tutto"
 #: includes/admin/views/panel/statistic.php:60
 #: includes/admin/views/panel/statistic.php:100
 #: includes/admin/views/panel/statistic.php:135
+#, php-format
 msgctxt "placeholder is an html tag"
 msgid "No statistics%sare reported for this period"
 msgstr ""
@@ -272,6 +276,7 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:29
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid ""
 "Welcome to AJAX Search 2.0,%1$sthe advanced search form that will make the "
@@ -280,6 +285,7 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:39
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid ""
 "In this new version, you'll find the %1$s new features %2$s and an improved "
@@ -302,6 +308,7 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:62
+#, php-format
 msgctxt "Placeholders are HTML tags."
 msgid ""
 "%1$sPlease note:%2$s the old search form will be supported until January 15, "
@@ -339,21 +346,21 @@ msgstr ""
 
 #. translators: %1$s is the amount of result %2$s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:384
-#, fuzzy
+#, fuzzy, php-format
 msgctxt "1 result for \"shoes\""
 msgid "%1$s result for \"%2$s\""
 msgstr "Nessun risultato"
 
 #. translators: %1$s is the amount of result %2$s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:386
-#, fuzzy
+#, fuzzy, php-format
 msgctxt "3 results for \"shoes\""
 msgid "%1$s results for \"%2$s\""
 msgstr "Nessun risultato"
 
 #. translators: %s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:388
-#, fuzzy
+#, fuzzy, php-format
 msgctxt "Results for \"shoes\""
 msgid "Results for \"%s\""
 msgstr "Nessun risultato"
@@ -752,6 +759,7 @@ msgstr "Mostra %1$sdescrizione prodotto%2$s"
 
 #. translators: Placeholders are HTML tags.
 #: includes/functions-yith-wcas.php:525
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid ""
 "This option is available only in the new search form. %1$sUpdate the plugin "
@@ -962,6 +970,7 @@ msgstr ""
 
 #. translators: placeholders are HTML tags.
 #: plugin-options/general-options.php:97
+#, php-format
 msgctxt "Admin option description.sprintf"
 msgid ""
 "Enable to help users find relevant results even when the search terms are "
@@ -976,6 +985,7 @@ msgstr ""
 
 #. translators: Admin option description. Placeholders are HTML tags.
 #: plugin-options/general-options.php:115
+#, php-format
 msgctxt "Admin option description. Placeholders are HTML tags"
 msgid ""
 "Choose the fuzzy matching level. %1$sNote: a 100%% level can produce a "

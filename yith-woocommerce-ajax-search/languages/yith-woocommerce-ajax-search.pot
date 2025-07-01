@@ -2,23 +2,25 @@
 # This file is distributed under the same license as the YITH WooCommerce Ajax Search plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Ajax Search 2.15.0\n"
+"Project-Id-Version: YITH WooCommerce Ajax Search 2.16.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-ajax-search\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-06-09T10:47:26+00:00\n"
+"POT-Creation-Date: 2025-07-01T12:45:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: yith-woocommerce-ajax-search\n"
 
 #. Plugin URI of the plugin
+#: init.php
 msgid "https://yithemes.com/themes/plugins/yith-woocommerce-ajax-search/"
 msgstr ""
 
 #. Description of the plugin
+#: init.php
 msgid "<code><strong>YITH WooCommerce Ajax Search</strong></code> is the plugin that allows you to search for a specific product by inserting a few characters. Thanks to <strong>Ajax Search</strong>, users can quickly find the contents they are interested in without wasting time among site pages. <a href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>."
 msgstr ""
 
@@ -126,6 +128,7 @@ msgstr ""
 
 #. translators: %1$d is the item processed, %2$d is the total to process, %3$s percentage.
 #: includes/admin/views/custom-fields/types/ywcas-index.php:51
+#, php-format
 msgid "%1$d / %2$d items - %3$d%%"
 msgstr ""
 
@@ -242,6 +245,7 @@ msgstr ""
 #: includes/admin/views/panel/statistic.php:60
 #: includes/admin/views/panel/statistic.php:100
 #: includes/admin/views/panel/statistic.php:135
+#, php-format
 msgctxt "placeholder is an html tag"
 msgid "No statistics%sare reported for this period"
 msgstr ""
@@ -252,12 +256,14 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:29
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid "Welcome to AJAX Search 2.0,%1$sthe advanced search form that will make the difference in your shop."
 msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:39
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid "In this new version, you'll find the %1$s new features %2$s and an improved %1$scompatibility with the latest WooCommerce versions%2$s. Updating the current search module in your shop is a piece of cake: we will show you how to do that step by step in %3$sthis video.%4$s"
 msgstr ""
@@ -276,6 +282,7 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/admin/views/upgrade-modal/upgrade-modal.php:62
+#, php-format
 msgctxt "Placeholders are HTML tags."
 msgid "%1$sPlease note:%2$s the old search form will be supported until January 15, 2024. After that date, it will be automatically updated to the new form."
 msgstr ""
@@ -310,18 +317,21 @@ msgstr ""
 
 #. translators: %1$s is the amount of result %2$s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:384
+#, php-format
 msgctxt "1 result for \"shoes\""
 msgid "%1$s result for \"%2$s\""
 msgstr ""
 
 #. translators: %1$s is the amount of result %2$s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:386
+#, php-format
 msgctxt "3 results for \"shoes\""
 msgid "%1$s results for \"%2$s\""
 msgstr ""
 
 #. translators: %s is the query searched.
 #: includes/builders/gutenberg/class-yith-wcas-gutenberg-blocks-controller.php:388
+#, php-format
 msgctxt "Results for \"shoes\""
 msgid "Results for \"%s\""
 msgstr ""
@@ -694,6 +704,7 @@ msgstr ""
 
 #. translators: Placeholders are HTML tags.
 #: includes/functions-yith-wcas.php:525
+#, php-format
 msgctxt "Placeholders are HTML tags"
 msgid "This option is available only in the new search form. %1$sUpdate the plugin now, it's easy >%2$s"
 msgstr ""
@@ -877,6 +888,7 @@ msgstr ""
 
 #. translators: placeholders are HTML tags.
 #: plugin-options/general-options.php:97
+#, php-format
 msgctxt "Admin option description.sprintf"
 msgid ""
 "Enable to help users find relevant results even when the search terms are misspelled.%s\n"
@@ -890,6 +902,7 @@ msgstr ""
 
 #. translators: Admin option description. Placeholders are HTML tags.
 #: plugin-options/general-options.php:115
+#, php-format
 msgctxt "Admin option description. Placeholders are HTML tags"
 msgid "Choose the fuzzy matching level. %1$sNote: a 100%% level can produce a significant number of false positives.%1$sSuggested value: 50%%"
 msgstr ""
