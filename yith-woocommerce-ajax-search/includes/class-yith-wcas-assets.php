@@ -165,7 +165,7 @@ if ( ! class_exists( 'YITH_WCAS_Assets' ) ) {
 				),
 				'ywcas-statistic'     => array(
 					'src'     => yit_load_js_file( YITH_WCAS_ASSETS_URL . '/js/admin/build/statistic.js' ),
-					'deps'    => array( 'jquery', 'jquery-blockui' ),
+					'deps'    => array( 'jquery', \YIT_Assets::wc_script_handle( 'wc-jquery-blockui' ) ),
 					'version' => YITH_WCAS_VERSION,
 				),
 			);

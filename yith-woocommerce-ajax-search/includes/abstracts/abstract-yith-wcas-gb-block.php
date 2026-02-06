@@ -37,6 +37,7 @@ abstract class Abstract_YITH_WCAS_Gb_Block {
 	 */
 	protected $enqueued_assets = false;
 
+
 	/**
 	 * Constructor.
 	 *
@@ -238,7 +239,7 @@ abstract class Abstract_YITH_WCAS_Gb_Block {
 		$script = array(
 			'handle'       => 'ywcas-' . $this->block_name . '-block',
 			'path'         => $this->get_block_asset_build_path( $this->block_name ),
-			'dependencies' => array( 'ywcas-blocks', 'accounting', 'jquery' ),
+			'dependencies' => array( 'ywcas-blocks', \YIT_Assets::wc_script_handle( 'wc-accounting' ), 'jquery' ),
 		);
 
 		return $key ? $script[ $key ] : $script;
@@ -266,7 +267,7 @@ abstract class Abstract_YITH_WCAS_Gb_Block {
 		$script = array(
 			'handle'       => 'ywcas-' . $this->block_name . '-block-frontend',
 			'path'         => $this->get_block_asset_build_path( $this->block_name . '-frontend' ),
-			'dependencies' => array( 'accounting', 'jquery' ),
+			'dependencies' => array( \YIT_Assets::wc_script_handle( 'wc-accounting' ), 'jquery' ),
 		);
 
 		return $key ? $script[ $key ] : $script;
