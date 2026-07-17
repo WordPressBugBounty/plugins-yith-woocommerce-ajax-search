@@ -1,5 +1,5 @@
 /******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
+let __webpack_exports__ = {};
 /*!******************************************!*\
   !*** ./assets/js/admin/src/statistic.js ***!
   \******************************************/
@@ -105,7 +105,7 @@ var YWCAS_Admin_Statistic = function YWCAS_Admin_Statistic() {
   init();
 };
 YWCAS_Admin_Statistic();
-var __webpack_export_target__ = window;
+const __webpack_export_target__ = window;
 for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()

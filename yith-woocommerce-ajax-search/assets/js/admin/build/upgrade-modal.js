@@ -127,20 +127,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ api)
 /* harmony export */ });
-/*! js-cookie v3.0.5 | MIT */
-/* eslint-disable no-var */
+/*! js-cookie v3.0.8 | MIT */
 function assign (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
     for (var key in source) {
+      if (key === '__proto__') continue
       target[key] = source[key];
     }
   }
   return target
 }
-/* eslint-enable no-var */
 
-/* eslint-disable no-var */
 var defaultConverter = {
   read: function (value) {
     if (value[0] === '"') {
@@ -155,12 +153,9 @@ var defaultConverter = {
     )
   }
 };
-/* eslint-enable no-var */
 
-/* eslint-disable no-var */
-
-function init (converter, defaultAttributes) {
-  function set (name, value, attributes) {
+function init(converter, defaultAttributes) {
+  function set(name, value, attributes) {
     if (typeof document === 'undefined') {
       return
     }
@@ -204,7 +199,7 @@ function init (converter, defaultAttributes) {
       name + '=' + converter.write(value, name) + stringifiedAttributes)
   }
 
-  function get (name) {
+  function get(name) {
     if (typeof document === 'undefined' || (arguments.length && !name)) {
       return
     }
@@ -219,12 +214,13 @@ function init (converter, defaultAttributes) {
 
       try {
         var found = decodeURIComponent(parts[0]);
-        jar[found] = converter.read(value, found);
-
+        if (!(found in jar)) jar[found] = converter.read(value, found);
         if (name === found) {
           break
         }
-      } catch (e) {}
+      } catch (_e) {
+        // Do nothing...
+      }
     }
 
     return name ? jar[name] : jar
@@ -232,8 +228,8 @@ function init (converter, defaultAttributes) {
 
   return Object.create(
     {
-      set,
-      get,
+      set: set,
+      get: get,
       remove: function (name, attributes) {
         set(
           name,
@@ -258,7 +254,6 @@ function init (converter, defaultAttributes) {
 }
 
 var api = init(defaultConverter, { path: '/' });
-/* eslint-enable no-var */
 
 
 
@@ -268,17 +263,17 @@ var api = init(defaultConverter, { path: '/' });
 /******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
@@ -287,7 +282,7 @@ var api = init(defaultConverter, { path: '/' });
 /******/ 		// Execute the module function
 /******/ 		if (!(moduleId in __webpack_modules__)) {
 /******/ 			delete __webpack_module_cache__[moduleId];
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
 /******/ 			e.code = 'MODULE_NOT_FOUND';
 /******/ 			throw e;
 /******/ 		}
@@ -300,11 +295,26 @@ var api = init(defaultConverter, { path: '/' });
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
+/******/ 		// define getter/value functions for harmony exports
 /******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
 /******/ 				}
 /******/ 			}
 /******/ 		};
@@ -312,14 +322,14 @@ var api = init(defaultConverter, { path: '/' });
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.hasOwn(obj, prop))
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
 /******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			if(Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
@@ -327,7 +337,7 @@ var api = init(defaultConverter, { path: '/' });
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
+let __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!**********************************************!*\
@@ -394,7 +404,7 @@ jQuery(document).ready(function ($) {
 });
 })();
 
-var __webpack_export_target__ = window;
+const __webpack_export_target__ = window;
 for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()
