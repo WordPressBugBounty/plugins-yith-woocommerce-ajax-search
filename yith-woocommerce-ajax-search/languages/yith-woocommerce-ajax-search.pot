@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the YITH WooCommerce Ajax Search plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Ajax Search 2.28.0\n"
+"Project-Id-Version: YITH WooCommerce Ajax Search 2.28.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-ajax-search\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-31T10:49:11+00:00\n"
+"POT-Creation-Date: 2026-09-11T09:43:25+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.13.0-alpha\n"
 "X-Domain: yith-woocommerce-ajax-search\n"
@@ -211,23 +211,23 @@ msgstr ""
 msgid "< Back to all stats"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:22
+#: includes/admin/views/panel/statistic-filter.php:20
 msgid "Filter by date: "
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:34
+#: includes/admin/views/panel/statistic-filter.php:32
 msgid "From"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:51
+#: includes/admin/views/panel/statistic-filter.php:49
 msgid "To"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:56
+#: includes/admin/views/panel/statistic-filter.php:54
 msgid "Filter"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:57
+#: includes/admin/views/panel/statistic-filter.php:55
 msgid "Reset"
 msgstr ""
 
@@ -381,6 +381,10 @@ msgstr ""
 #: includes/class-yith-wcas-admin.php:230
 msgctxt "description of \"Search shortcodes\" section"
 msgid "Create and customize your search shortcodes."
+msgstr ""
+
+#: includes/class-yith-wcas-admin.php:470
+msgid "Security check failed."
 msgstr ""
 
 #: includes/class-yith-wcas-assets.php:269

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Ajax Search\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "ajax-search\n"
-"POT-Creation-Date: 2026-08-31T10:49:11+00:00\n"
+"POT-Creation-Date: 2026-09-11T09:43:25+00:00\n"
 "PO-Revision-Date: 2020-03-20 08:23+0100\n"
 "Last-Translator: Luis Maia <lmsm76@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
@@ -226,23 +226,23 @@ msgstr ""
 msgid "< Back to all stats"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:22
+#: includes/admin/views/panel/statistic-filter.php:20
 msgid "Filter by date: "
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:34
+#: includes/admin/views/panel/statistic-filter.php:32
 msgid "From"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:51
+#: includes/admin/views/panel/statistic-filter.php:49
 msgid "To"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:56
+#: includes/admin/views/panel/statistic-filter.php:54
 msgid "Filter"
 msgstr ""
 
-#: includes/admin/views/panel/statistic-filter.php:57
+#: includes/admin/views/panel/statistic-filter.php:55
 msgid "Reset"
 msgstr ""
 
@@ -411,6 +411,10 @@ msgstr "Procurar"
 #: includes/class-yith-wcas-admin.php:230
 msgctxt "description of \"Search shortcodes\" section"
 msgid "Create and customize your search shortcodes."
+msgstr ""
+
+#: includes/class-yith-wcas-admin.php:470
+msgid "Security check failed."
 msgstr ""
 
 #: includes/class-yith-wcas-assets.php:269

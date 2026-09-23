@@ -13,11 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$data_type = isset( $type ) ? 'data-type="' . $type . '"' : '';
-
 ?>
 
-<div class="ywcas-statistic-filter" <?php echo esc_attr( $data_type ); ?>>
+<div class="ywcas-statistic-filter" <?php echo isset( $type ) ? 'data-type="' . esc_attr( $type ) . '"' : ''; ?>>
 	<form id="ywcas-statistic-filter-form">
 		<span><?php esc_html_e( 'Filter by date: ', 'yith-woocommerce-ajax-search' ); ?></span>
 		<?php
@@ -34,7 +32,7 @@ $data_type = isset( $type ) ? 'data-type="' . $type . '"' : '';
 				'placeholder' => __( 'From', 'yith-woocommerce-ajax-search' ),
 			),
 		);
-		 yith_plugin_fw_get_field( $field, true );
+		yith_plugin_fw_get_field( $field, true );
 		?>
 		<span> > </span>
 		<?php

@@ -460,12 +460,16 @@ if ( ! class_exists( 'YITH_WCAS_Admin' ) ) {
 		 * @since 2.1.0
 		 */
 		public function show_statistic_tab() {
-			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			if ( isset( $_GET['page'] ) ) {
 				$page = sanitize_text_field( wp_unslash( $_GET['page'] ) );
 				$tab  = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : '';
 				if ( 'yith_wcas_panel' === $page && in_array( $tab, array( '', 'statistic' ), true ) ) {
 					if ( isset( $_GET['view_all'] ) ) {
+
+						if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ) ), 'ywcas_view_statistic' ) ) {
+							wp_die( esc_html__( 'Security check failed.', 'yith-woocommerce-ajax-search' ) );
+						}
+
 						if ( isset( $_GET['from'], $_GET['to'] ) ) {
 							$from = sanitize_text_field( wp_unslash( $_GET['from'] ) );
 							$to   = sanitize_text_field( wp_unslash( $_GET['to'] ) );
@@ -478,7 +482,6 @@ if ( ! class_exists( 'YITH_WCAS_Admin' ) ) {
 					}
 				}
 			}
-			// phpcs:enable
 		}
 
 		/**

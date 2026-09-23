@@ -146,6 +146,12 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 2.28.1 - Released on 11 September 2026 =
+
+* Fix: Patched vulnerability issue
+
+* New: support for WooCommerce 11.1
+
 = 2.28.0 - Released on 31 August 2026 =
 
 * New: support for WooCommerce 11.1

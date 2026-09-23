@@ -40,7 +40,7 @@ $url_params = array(
 				$top_searches      = YITH_WCAS_Data_Search_Query_Log::get_top_searches( $from_time, $to_time, $counter, 0 );
 				$best_tot_searches = count( $top_searches ) > 0 ? $top_searches[0]['searches'] : 0;
 				if ( $best_tot_searches ) :
-					$admin_url = add_query_arg( array_merge( $url_params, array( 'view_all' => 'searched' ) ), admin_url( 'admin.php' ) );
+					$admin_url = wp_nonce_url( add_query_arg( array_merge( $url_params, array( 'view_all' => 'searched' ) ), admin_url( 'admin.php' ) ), 'ywcas_view_statistic' );
 					foreach ( $top_searches as $query ) :
 						$percentage = round( $query['searches'] / $best_tot_searches * 100 );
 						?>
@@ -76,7 +76,7 @@ $url_params = array(
 				$top_clicked     = YITH_WCAS_Data_Search_Query_Log::get_top_clicked_products( $from_time, $to_time, $counter, 0 );
 				$best_tot_clicks = count( $top_clicked ) > 0 ? $top_clicked[0]['clicks'] : 0;
 				if ( $best_tot_clicks ) :
-					$admin_url = add_query_arg( array_merge( $url_params, array( 'view_all' => 'clicked' ) ), admin_url( 'admin.php' ) );
+					$admin_url = wp_nonce_url( add_query_arg( array_merge( $url_params, array( 'view_all' => 'clicked' ) ), admin_url( 'admin.php' ) ), 'ywcas_view_statistic' );
 					foreach ( $top_clicked as $product_clicked ) :
 						$product = wc_get_product( $product_clicked['product_id'] );
 						if ( ! $product instanceof WC_Product ) {
@@ -115,7 +115,7 @@ $url_params = array(
 				$top_no_results      = YITH_WCAS_Data_Search_Query_Log::get_top_no_results( $from_time, $to_time, $counter, 0 );
 				$best_tot_no_results = count( $top_no_results ) > 0 ? $top_no_results[0]['no_results'] : 0;
 				if ( $best_tot_no_results ) :
-					$admin_url = add_query_arg( array_merge( $url_params, array( 'view_all' => 'no_results' ) ), admin_url( 'admin.php' ) );
+					$admin_url = wp_nonce_url( add_query_arg( array_merge( $url_params, array( 'view_all' => 'no_results' ) ), admin_url( 'admin.php' ) ), 'ywcas_view_statistic' );
 					foreach ( $top_no_results as $query ) :
 						$percentage = round( $query['no_results'] / $best_tot_no_results * 100 );
 						?>
