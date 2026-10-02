@@ -5,7 +5,7 @@ Tags: woocommerce search by sku, woocommerce search results, woocommerce search 
 Requires at least: 6.8
 Requires PHP: 7.4
 Tested up to: 7.1
-Stable tag: 2.28.0
+Stable tag: 2.29.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -146,11 +146,13 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ==
 
+= 2.29.0 - Released on 2 October 2026 =
+
+* New: support for WooCommerce 11.2
+
 = 2.28.1 - Released on 11 September 2026 =
 
 * Fix: Patched vulnerability issue
-
-* New: support for WooCommerce 11.1
 
 = 2.28.0 - Released on 31 August 2026 =
 
