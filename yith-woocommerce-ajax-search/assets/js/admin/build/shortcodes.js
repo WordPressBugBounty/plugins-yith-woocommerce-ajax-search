@@ -1,5 +1,5 @@
 /******/ (() => { // webpackBootstrap
-let __webpack_exports__ = {};
+var __webpack_exports__ = {};
 /*!*******************************************!*\
   !*** ./assets/js/admin/src/shortcodes.js ***!
   \*******************************************/
@@ -286,7 +286,7 @@ var YWCAS_Admin_Shortcodes = function YWCAS_Admin_Shortcodes() {
   init();
 };
 YWCAS_Admin_Shortcodes();
-const __webpack_export_target__ = window;
+var __webpack_export_target__ = window;
 for(var __webpack_i__ in __webpack_exports__) __webpack_export_target__[__webpack_i__] = __webpack_exports__[__webpack_i__];
 if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ })()

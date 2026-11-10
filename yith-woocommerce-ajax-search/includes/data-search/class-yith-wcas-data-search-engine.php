@@ -205,6 +205,20 @@ if ( ! class_exists( 'YITH_WCAS_Data_Search_Engine' ) ) {
 			}
 
 			$ids     = array_column( $search_results, 'post_id' );
+
+			/**
+			 * APPLY_FILTERS: ywcas_ids_fetch_limit
+			 *
+			 * Apply a limit to the number of IDs fetched from the index.
+			 *
+			 * @param int The maximum number of IDs to process. Default 0 (no limit).
+			 */
+			$limit = apply_filters( 'ywcas_ids_fetch_limit', 0 );
+
+			if ( $limit > 0 && count( $ids ) > $limit ) {
+				$ids = array_slice( $ids, 0, $limit );
+			}
+
 			$results = YITH_WCAS_Data_Index_Lookup::get_instance()->get_data_by_id( $ids, $post_type, $category );
 			$results = $this->add_score( $results, $search_results );
 
